@@ -22,14 +22,19 @@
     <!-- vue-quill-editor富文本编辑器quilleditor -->
     <!-- <quill-editor v-model="content" ref="QuillEditor"></quill-editor> -->
     <!-- 自定义工具栏 -->
-    <quill-editor v-model="content" ref="QuillEditor" :options="editorOption"></quill-editor>
+    <!-- <quill-editor v-model="content" ref="QuillEditor" :options="editorOption"></quill-editor> -->
+     
+    <!-- quill 富文本编辑器 与vue-quill-editor不同   ok   -->
+    <myhahaquill v-model="content" ref="myQuillEditor"></myhahaquill>
     
     <!-- quill 富文本编辑器 与vue-quill-editor不同 -->
     <div class="myshuoming">quill 富文本编辑器 与vue-quill-editor不同</div>    
     <!-- <TestQuillEditor v-model="content" ref="myQuillEditor"></TestQuillEditor> -->
 
     <!-- <myqull v-model="content" ref="myQuillEditor"></myqull> -->
-    <myquill :content.sync="content" ref="myQuillEditor"></myquill>
+
+    <!-- quill 富文本编辑器自定义上传图片和视频 -->
+    <!-- <myquill :content.sync="content" ref="myQuillEditor"></myquill> -->
      
   </div>
 </template>
@@ -45,8 +50,10 @@ import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import "quill/dist/quill.bubble.css";
 
-import TestQuillEditor from './components/tes.vue';
+import myhahaquill from './components/haha.vue';
 
+
+import TestQuillEditor from './components/tes.vue';
 import myqull from './components/myqulldrag.vue';
 import myquill from './components/myquill.vue';
 
@@ -81,7 +88,8 @@ export default {
 
     // myqull,
     myquill,
-    TestQuillEditor
+    TestQuillEditor,
+    myhahaquill
   },
   data() {
     return {
@@ -104,17 +112,17 @@ export default {
           toolbar: {
             container: toolbarOptions, // 工具栏
             // container: ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block', {'header': 1}, {'header': 2},{'list': 'ordered'}, {'list': 'bullet'},{'indent': '-1'}, {'indent': '+1'},{'direction': 'rtl'},{'size': ['small', false, 'large', 'huge']}],
-            handlers: {
-              image: function(value) {
-                if (value) {
-                  console.log(value);
-                  alert("自定义图片");
-                } else {
-                  // this.quill.format('image', false);
-                  QuillEditor.format("image", false);
-                }
-              }
-            }
+            // handlers: {
+            //   image: function(value) {
+            //     if (value) {
+            //       console.log(value);
+            //       alert("自定义图片");
+            //     } else {
+            //       // this.quill.format('image', false);
+            //       QuillEditor.format("image", false);
+            //     }
+            //   }
+            // }
           }
         }
       }
