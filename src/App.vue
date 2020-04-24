@@ -20,7 +20,7 @@
     
     <div class="myshuoming">vue-quill-editor富文本编辑器quilleditor</div>
     <!-- vue-quill-editor富文本编辑器quilleditor -->
-    <!-- <quill-editor v-model="content" ref="QuillEditor"></quill-editor> -->
+    <quill-editor v-model="content" ref="QuillEditor"></quill-editor>
     <!-- 自定义工具栏 -->
     <!-- <quill-editor v-model="content" ref="QuillEditor" :options="editorOption"></quill-editor> -->
      
@@ -87,9 +87,9 @@ export default {
     quillEditor,//vue-quill-editor富文本编辑器quilleditor
 
     // myqull,
-    myquill,
-    TestQuillEditor,
-    myhahaquill
+    // myquill,
+    // TestQuillEditor,
+    // myhahaquill
   },
   data() {
     return {
